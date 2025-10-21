@@ -24,7 +24,9 @@ def test_model_with_gemini(topic):
     print(f"\n1. Contacting Gemini to generate data for the topic: '{topic}'...")
 
     # Set up the Gemini model - UPDATED to another stable model name
-    model = genai.GenerativeModel('gemini-1.0-pro')
+    model = genai.GenerativeModel(model_name="models/gemini-pro")
+
+    print("   - Gemini model initialized.")
 
     # We create a very specific prompt asking Gemini for 4 numbers in a JSON format.
     # This makes the response easy for our script to parse.
