@@ -14,7 +14,7 @@ except KeyError:
     exit()
 
 # The URL of your running Docker container's API endpoint
-DOCKER_API_URL = "http://localhost:5000/predict"
+DOCKER_API_URL = "http://localhost:5000"
 
 def test_model_with_gemini(topic):
     """
