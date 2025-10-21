@@ -21,7 +21,7 @@ if not os.path.exists('models'):
     os.makedirs('models')
 
 # 4. Save the trained model to a file
-model_path = 'models/your_model.pkl'
+model_path = 'models/test_model.pkl'
 with open(model_path, 'wb') as f:
     pickle.dump(model, f)
 
