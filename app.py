@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Load the trained model from the file
 try:
-    with open('models/your_model.pkl', 'rb') as f:
+    with open('models/test_model.pkl', 'rb') as f:
         model = pickle.load(f)
 except FileNotFoundError:
     model = None
