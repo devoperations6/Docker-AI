@@ -23,8 +23,8 @@ def test_model_with_gemini(topic):
     """
     print(f"\n1. Contacting Gemini to generate data for the topic: '{topic}'...")
 
-    # Set up the Gemini model
-    model = genai.GenerativeModel('gemini-pro')
+    # Set up the Gemini model - UPDATED to a current model name
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
     # We create a very specific prompt asking Gemini for 4 numbers in a JSON format.
     # This makes the response easy for our script to parse.
@@ -37,7 +37,8 @@ def test_model_with_gemini(topic):
     For example, if the topic is "housing prices in a city", a good response would be:
     {{"features": [1200, 3, 2, 1995]}}
     """
-
+    
+    response = None # Initialize response to prevent UnboundLocalError
     try:
         # Generate content using the Gemini API
         response = model.generate_content(prompt)
@@ -55,7 +56,8 @@ def test_model_with_gemini(topic):
 
     except Exception as e:
         print(f"   - An error occurred while communicating with the Gemini API: {e}")
-        print(f"   - Raw Gemini response: {response.text}")
+        if response:
+            print(f"   - Raw Gemini response: {response.text}")
         return
 
     print(f"\n2. Sending these features to your AI container at {DOCKER_API_URL}...")
@@ -90,3 +92,5 @@ if __name__ == "__main__":
     
     if user_topic:
         test_model_with_gemini(user_topic)
+
+
