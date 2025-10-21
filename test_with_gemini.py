@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-import google.generativai as genai
+import google.generativeai as genai
 
 # --- Configuration ---
 # IMPORTANT: Before running, set your Gemini API key as an environment variable.
