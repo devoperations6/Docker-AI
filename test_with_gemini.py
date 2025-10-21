@@ -24,7 +24,7 @@ def test_model_with_gemini(topic):
     print(f"\n1. Contacting Gemini to generate data for the topic: '{topic}'...")
 
     # Set up the Gemini model - UPDATED to another stable model name
-    model = genai.GenerativeModel(model_name="models/gemini-pro")
+    model = genai.GenerativeModel(model_name="models/gemini-2.5-pro")
 
     print("Using Gemini model: models/gemini-pro")
 
