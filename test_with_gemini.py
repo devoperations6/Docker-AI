@@ -23,8 +23,8 @@ def test_model_with_gemini(topic):
     """
     print(f"\n1. Contacting Gemini to generate data for the topic: '{topic}'...")
 
-    # Set up the Gemini model - UPDATED to a current model name
-    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    # Set up the Gemini model - UPDATED to another stable model name
+    model = genai.GenerativeModel('gemini-1.0-pro')
 
     # We create a very specific prompt asking Gemini for 4 numbers in a JSON format.
     # This makes the response easy for our script to parse.
@@ -92,5 +92,4 @@ if __name__ == "__main__":
     
     if user_topic:
         test_model_with_gemini(user_topic)
-
 
